@@ -26,7 +26,7 @@ def analyse_deal(deal: dict, api_key: str = None) -> dict:
     if not key:
         return {**deal, "ai_verdict": "⚠️ No AI key", "ai_score": 5, "ai_reason": "API key missing", "ai_buy_rating": "Unknown"}
 
-        lowest_msg   = "At or near lowest ever price! 🔥" if deal["is_lowest_ever"] else f"{deal['drop_from_low']:+.1f}% vs lowest ever"
+    lowest_msg = "At or near lowest ever price! 🔥" if deal["is_lowest_ever"] else f"{deal['drop_from_low']:+.1f}% vs lowest ever"
     prompt = (
         f"You are an expert deal analyst for content creators.\n\n"
         f"PRODUCT: {deal['name']}\n"
